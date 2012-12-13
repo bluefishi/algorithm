@@ -1,0 +1,4 @@
+algorithm
+=========
+
+simple programs DIY
