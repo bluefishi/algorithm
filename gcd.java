@@ -1,6 +1,11 @@
 package algorithm;
-
+/*
+  iterative version
+  
+*/
 public class gcd {
+	
+	
 	private int computegcd(int m, int n)
 	{
 		int tempm;
@@ -9,9 +14,9 @@ public class gcd {
 			tempm = m;
 			m = n;
 			n = tempm % n;
-			computegcd(m,n);
+			//computegcd(m,n); 
 		}
-		return m;
+		return m>0?m:-m;//m,n should be positive integer 
 	}
 	
 	public static void main(String args[])
