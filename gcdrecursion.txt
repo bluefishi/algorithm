@@ -1,0 +1,15 @@
+/*
+ 
+ beautiful recursion version
+*/
+public class gcdrecursion
+{
+   int gcd(int m,int n)
+   {
+	 return n == 0? m:gcd(n, m%n);
+    }
+   public static void main(String args[])
+   {
+	
+    }
+}
