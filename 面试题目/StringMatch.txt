@@ -1,0 +1,45 @@
+package StringMatch;
+import java.io.*;
+/*
+ * 给一个文件名+一个字符串
+ * 写一个函数，计算这个字符串在文件中出现的次数
+ * 2013 0104
+ * apple*/
+public class StringMatch{
+	int Count(String filename,String str)
+	{
+		int count = 0;
+		if(str == null || str.equals(""))
+			return 0;
+		try{
+			File f = new File(filename);
+//			注意啦。。。。。。
+			BufferedReader br = new BufferedReader(new FileReader(f));
+			String tempstr = null;
+			
+			while((tempstr=br.readLine())!=null)
+			{
+				while(tempstr.contains(str))
+				{
+					count++;
+//					注意啦。。。。。。。。。。。。
+					tempstr = tempstr.substring(tempstr.indexOf(str)+str.length(),tempstr.length());
+				}
+				
+			}
+			
+		}catch(FileNotFoundException e){
+			e.printStackTrace();
+		}
+		catch(IOException e2){
+			e2.printStackTrace();
+		}
+		return count;
+	}
+	public static void main(String args[])
+	{
+		StringMatch t = new StringMatch();
+		System.out.println(t.Count("text1.txt", "hello"));
+	}
+
+}
